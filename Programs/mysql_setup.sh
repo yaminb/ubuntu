@@ -23,3 +23,10 @@ COMMIT;
 #END MYSQL SESSION (exit)
 
 sudo service mysql restart
+
+#disable auto start
+sudo systemctl disable mysql
+
+#start/stop
+sudo service mysql stop
+sudo service mysql start
