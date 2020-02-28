@@ -29,3 +29,12 @@ sudo apt-get install virtualbox-dkms
 sudo apt-get install gnome-software-plugin-flatpak
 sudo apt-get install git
 
+
+#important settings
+
+#Grub timeout
+echo "GRUB_TIMEOUT=5"
+read -p "Press enter to continue"
+sudo vi /etc/default/grub
+sudo update-grub
+
