@@ -1,0 +1,58 @@
+#!  /bin/bash
+#RM_SELINUX_RULE=enable
+#
+#  PRNL=hl2270dwlpr-2.1.0-1a.i386.deb
+#  PRNC=cupswrapperHL2270DW-2.0.4-2a.i386.deb
+#  PRNP=
+#  SCAN=
+#  SKEY=
+#
+if ! [ -f /etc/init.d/cupsys ];then
+ DUMMYCUPSYS=1
+ ln -s /bin/true  /etc/init.d/cupsys
+fi
+if ! [ -f /etc/init.d/cups ];then
+ DUMMYCUPS=1
+ ln -s /bin/true  /etc/init.d/cups
+fi
+if ! [ -f /etc/init.d/lpd ];then
+ DUMMYLPD=1
+ ln -s /bin/true  /etc/init.d/lpd
+fi
+if ! [ -f /etc/init.d/lprng ];then
+ DUMMYLPRNG=1
+ ln -s /bin/true  /etc/init.d/lprng
+fi
+dpkg  -x cupswrapperHL2270DW-2.0.4-2.i386.deb /
+dpkg  -P    cupswrapperHL2270DW:i386
+dpkg  -x hl2270dwlpr-2.1.0-1.i386.deb /
+dpkg  -P    hl2270dwlpr:i386
+if [ "$DUMMYCUPS" = 1 ];then
+  lsc=$(ls -al /etc/init.d/cups  2> /dev/null| grep ^l)
+  if [ "$lsc" != "" ];then
+    rm -f /etc/init.d/cups
+  fi
+fi
+
+if [ "$DUMMYCUPSYS" = 1 ];then
+  lsc=$(ls -al /etc/init.d/cupsys  2> /dev/null| grep ^l)
+  if [ "$lsc" != "" ];then
+    rm -f /etc/init.d/cupsys
+  fi
+fi
+
+if [ "$DUMMYLPD" = 1 ];then
+  lsc=$(ls -al /etc/init.d/lpd  2> /dev/null | grep ^l)
+  if [ "$lsc" != "" ];then
+    rm -f /etc/init.d/lpd
+  fi
+fi
+
+if [ "$DUMMYLPRNG" = 1 ];then
+  lsc=$(ls -al /etc/init.d/lprng | grep ^l)
+  if [ "$lsc" != "" ];then
+    rm -f /etc/init.d/lprng
+  fi
+fi
+
+
