@@ -19,6 +19,12 @@ set -x #echo on
 sudo snap install vlc
 sudo snap install keepassxc
 sudo snap install libreoffice
+sudo snap install kolourpaint
+sudo snap install obs-studio
+sudo snap install discord
+sudo snap install chromium
+
+
 
 
 #APT packages
@@ -28,6 +34,7 @@ sudo apt-get install virtualbox-dkms
 
 sudo apt-get install gnome-software-plugin-flatpak
 sudo apt-get install git
+sudo apt-get install firefox
 
 
 #important settings
