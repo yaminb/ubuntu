@@ -19,7 +19,7 @@ set -x #echo on
 sudo snap install vlc
 sudo snap install keepassxc
 sudo snap install libreoffice
-sudo snap install kolourpaint
+sudo snap install pinta
 sudo snap install obs-studio
 sudo snap install discord
 sudo snap install chromium
