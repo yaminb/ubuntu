@@ -8,3 +8,6 @@ sudo vi /lib/udev/rules.d/61-gdm.rules
 #GRUB_CMDLINE_LINUX="nvidia-drm.modeset=1"
 sudo vi /etc/default/grub
 
+
+sudo update-grub
+
