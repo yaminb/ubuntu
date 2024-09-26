@@ -6,4 +6,5 @@ set -x #echo on
 
 sudo tune2fs -c 1 /dev/sda1
 sudo tune2fs -c 1 /dev/sda3
+sudo tune2fs -c 1 /dev/sdc3
 
